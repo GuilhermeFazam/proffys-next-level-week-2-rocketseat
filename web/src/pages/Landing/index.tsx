@@ -6,12 +6,11 @@ import landingImg from '../../assets/images/landing.svg';
 import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
-
-import './styles.css';
+import { Container } from './styles';
 
 const Landing: React.FC = () => {
     return (
-        <div id="page-landing">
+        <Container id="page-landing">
             <div id="page-landing-content" className="container">
                 <div className="logo-container">
                     <img src={logoImg} alt="Proffy" />
@@ -30,11 +29,11 @@ const Landing: React.FC = () => {
                     </Link>
                 </div>
                 <span className="total-conections">
-                    Total de 200 conexões ja realizadas{' '}
+                    Total de 200 conexões ja realizadas
                     <img src={purpleHeartIcon} alt="" />
                 </span>
             </div>
-        </div>
+        </Container>
     );
 };
 

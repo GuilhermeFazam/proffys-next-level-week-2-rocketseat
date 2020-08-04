@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 import backImg from '../../assets/images/icons/back.svg';
-import './styles.css';
+import { Container } from './styles';
 
 interface PageHeaderProps {
     title: string;
@@ -11,7 +11,7 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title, children }) => {
     return (
-        <header className="page-header">
+        <Container className="page-header">
             <div className="top-bar-container">
                 <Link to="/">
                     <img src={backImg} alt="Voltar" />
@@ -22,7 +22,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, children }) => {
                 <strong>{title}</strong>
                 {children}
             </div>
-        </header>
+        </Container>
     );
 };
 

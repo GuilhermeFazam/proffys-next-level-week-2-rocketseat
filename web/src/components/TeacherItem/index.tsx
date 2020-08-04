@@ -1,10 +1,10 @@
 import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
-import './styles.css';
+import { Container } from './styles';
 
 const TeacherItem: React.FC = () => {
     return (
-        <article className="teacher-item">
+        <Container className="teacher-item">
             <header>
                 <img
                     src="https://avatars2.githubusercontent.com/u/5084382?s=460&u=a0594186c875d50447d8d9b8bdc37ae320805631&v=4"
@@ -15,7 +15,7 @@ const TeacherItem: React.FC = () => {
                     <span>Front-End</span>
                 </div>
             </header>
-            <p>
+            <p className="description">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
                 nesciunt voluptatem iure inventore magnam ipsa quaerat aliquid,
                 neque nisi, atque vel saepe dolore vero! Quod non suscipit
@@ -31,7 +31,7 @@ const TeacherItem: React.FC = () => {
                     Entrar em contato
                 </button>
             </footer>
-        </article>
+        </Container>
     );
 };
 
