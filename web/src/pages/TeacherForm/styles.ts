@@ -55,6 +55,9 @@ export const Container = styled.div`
                 }
             }
         }
+        .schedule-item + .schedule-item {
+            margin-top: 1.4rem;
+        }
     }
 
     footer {
@@ -108,13 +111,14 @@ export const Container = styled.div`
             fieldset {
                 padding: 0 6.4rem;
             }
-            .form-element + .form-element {
-                margin-top: 0;
-            }
+
             .schedule-item {
                 display: grid;
                 grid-template-columns: 2fr 1fr 1fr;
                 column-gap: 1.6rem;
+                .form-element + .form-element {
+                    margin-top: 0;
+                }
             }
             footer {
                 padding: 4rem 6.4rem;
