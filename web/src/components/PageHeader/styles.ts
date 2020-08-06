@@ -37,6 +37,13 @@ export const Container = styled.div`
             color: var(--color-text-in-primary);
             font-family: 'Archivo', sans-serif;
         }
+        p {
+            max-width: 30rem;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            color: var(--color-text-in-primary);
+            margin-top: 2.4rem;
+        }
     }
 
     @media (min-width: 700px) {
