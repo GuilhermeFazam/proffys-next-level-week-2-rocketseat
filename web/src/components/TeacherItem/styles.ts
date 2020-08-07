@@ -53,7 +53,7 @@ export const Container = styled.article`
             font-size: 1.6rem;
             display: block;
         }
-        button {
+        a {
             width: 20rem;
             height: 5.6rem;
             background-color: var(--color-secundary);
@@ -68,6 +68,7 @@ export const Container = styled.article`
             align-items: center;
             justify-content: space-evenly;
             outline: 0;
+            text-decoration: none;
             transition: 0.2s ease-in-out;
             &:hover {
                 background-color: var(--color-secundary-dark);
@@ -90,13 +91,13 @@ export const Container = styled.article`
             margin-left: 1.6rem;
         }
 
-        footer button {
+        footer a {
             width: 24.5rem;
             font-size: 1.6rem;
             justify-content: center;
         }
 
-        footer button img {
+        footer a img {
             margin-right: 1.6rem;
         }
     }

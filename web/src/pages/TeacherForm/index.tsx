@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Form/Input';
 import Textarea from '../../components/Form/Textarea';
@@ -10,6 +11,8 @@ import { Container } from './styles';
 import api from '../../services/api';
 
 const TeacherForm: React.FC = () => {
+    const history = useHistory();
+
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
@@ -62,13 +65,15 @@ const TeacherForm: React.FC = () => {
             bio,
             subject,
             cost: Number(cost),
-            shedule: scheduleItems,
+            schedule: scheduleItems,
         })
             .then(() => {
-                console.log('Cadastro realizado com sucesso!');
+                alert('Cadastro realizado com sucesso!');
+                history.push('/');
             })
-            .catch(() => {
-                console.log('Erro no cadastro!');
+            .catch(err => {
+                console.log(err);
+                alert('Erro no cadastro!');
             });
 
         console.log({
@@ -77,8 +82,8 @@ const TeacherForm: React.FC = () => {
             whatsapp,
             bio,
             subject,
-            cost,
-            scheduleItems,
+            cost: Number(cost),
+            shedule: scheduleItems,
         });
     }
 
@@ -138,18 +143,16 @@ const TeacherForm: React.FC = () => {
                                 setSubject(e.target.value);
                             }}
                             options={[
-                                { id: 1, value: 'Artes', label: 'Artes' },
+                                { value: 'Artes', label: 'Artes' },
                                 {
-                                    id: 2,
                                     value: 'Matemática',
                                     label: 'Matemática',
                                 },
                                 {
-                                    id: 3,
                                     value: 'Geografia',
                                     label: 'Geografia',
                                 },
-                                { id: 4, value: 'Fisica', label: 'Fisica' },
+                                { value: 'Fisica', label: 'Fisica' },
                             ]}
                         />
                         <Input
@@ -189,37 +192,30 @@ const TeacherForm: React.FC = () => {
                                         }
                                         options={[
                                             {
-                                                id: 0,
                                                 value: '0',
                                                 label: 'Domingo',
                                             },
                                             {
-                                                id: 1,
                                                 value: '1',
                                                 label: 'Segunda-feira',
                                             },
                                             {
-                                                id: 2,
                                                 value: '2',
                                                 label: 'Terça-feira',
                                             },
                                             {
-                                                id: 3,
                                                 value: '3',
                                                 label: 'Quarta-feira',
                                             },
                                             {
-                                                id: 4,
                                                 value: '4',
                                                 label: 'Quinta-feira',
                                             },
                                             {
-                                                id: 5,
                                                 value: '5',
                                                 label: 'Sexta-feira',
                                             },
                                             {
-                                                id: 6,
                                                 value: '6',
                                                 label: 'Sábado',
                                             },

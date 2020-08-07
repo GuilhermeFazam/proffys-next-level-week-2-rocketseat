@@ -1,35 +1,56 @@
 import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 import { Container } from './styles';
+import api from '../../services/api';
 
-const TeacherItem: React.FC = () => {
+export interface Classes {
+    id: number;
+    name: string;
+    avatar: string;
+    whatsapp: string;
+    subject: string;
+    cost: number;
+    bio: string;
+}
+
+interface TeacherItemProps {
+    classes: Classes;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ classes }) => {
+    function createNewConnectcion(): void {
+        api.post('connections', {
+            user_id: classes.id,
+        });
+    }
+
     return (
         <Container className="teacher-item">
             <header>
-                <img
-                    src="https://avatars2.githubusercontent.com/u/5084382?s=460&u=a0594186c875d50447d8d9b8bdc37ae320805631&v=4"
-                    alt="Guilherme Fazam"
-                />
+                <img src={classes.avatar} alt={classes.name} />
                 <div>
-                    <strong>Guilherme Fazam</strong>
-                    <span>Front-End</span>
+                    <strong>{classes.name}</strong>
+                    <span>{classes.subject}</span>
                 </div>
             </header>
-            <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-                nesciunt voluptatem iure inventore magnam ipsa quaerat aliquid,
-                neque nisi, atque vel saepe dolore vero! Quod non suscipit
-                voluptatibus dolorum voluptate?
-            </p>
+            <p className="description">{classes.bio}</p>
             <footer>
                 <p>
                     Preço/Hora
-                    <strong>R$ 60,00</strong>
+                    <strong>
+                        R$
+                        {` ${classes.cost} `}
+                    </strong>
                 </p>
-                <button type="submit">
+                <a
+                    onClick={createNewConnectcion}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://wa.me/${classes.whatsapp}`}
+                >
                     <img src={whatsappIcon} alt="WhatsApp" />
                     Entrar em contato
-                </button>
+                </a>
             </footer>
         </Container>
     );

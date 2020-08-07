@@ -9,6 +9,28 @@ export const Container = styled.div`
         label {
             color: var(--color-text-in-primary);
         }
+
+        button {
+            width: 100%;
+            height: 5.6rem;
+            background-color: var(--color-secundary);
+            color: var(--color-button-text);
+            border: 0;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Archivo';
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            outline: 0;
+            transition: 0.2s ease-in-out;
+            margin-top: 3rem;
+            &:hover {
+                background-color: var(--color-secundary-dark);
+            }
+        }
     }
 
     main {
@@ -27,10 +49,17 @@ export const Container = styled.div`
         }
         #search-teacher {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             column-gap: 16px;
             position: absolute;
             bottom: -28px;
+
+            button {
+                width: 100%;
+                font-size: 1.6rem;
+                justify-content: center;
+                margin-top: 3rem;
+            }
         }
 
         main {
