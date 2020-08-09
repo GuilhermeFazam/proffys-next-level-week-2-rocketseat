@@ -34,7 +34,9 @@ const TheacherItem: React.FC = () => {
                         <Text style={styles.priceValue}>R$ 120,00</Text>
                     </Text>
                     <View style={styles.buttonContainer}>
-                        <RectButton style={styles.favoriteButton}>
+                        <RectButton
+                            style={[styles.favoriteButton, styles.favorited]}
+                        >
                             <Image source={heartOutLineIcon} />
                         </RectButton>
                         <RectButton style={styles.contactButton}>
