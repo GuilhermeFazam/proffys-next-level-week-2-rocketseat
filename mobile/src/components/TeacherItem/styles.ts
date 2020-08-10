@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     bio: {
+        marginHorizontal: 24,
         fontFamily: 'Poppins_400Regular',
-        color: '#6a6180',
         fontSize: 14,
         lineHeight: 24,
-        marginHorizontal: 24,
+        color: '#6a6180',
     },
     footer: {
         backgroundColor: '#fafafc',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         marginTop: 24,
     },
     price: {
-        fontFamily: 'Poppins_400Ragular',
+        fontFamily: 'Poppins_400Regular',
         color: '#6a6180',
         fontSize: 14,
     },
@@ -71,12 +71,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginRight: 8,
     },
-
     favorited: {
         backgroundColor: '#e33d3d',
     },
     contactButton: {
-        backgroundColor: '#84d361',
+        backgroundColor: '#04d361',
         flex: 1,
         height: 56,
         borderRadius: 8,
